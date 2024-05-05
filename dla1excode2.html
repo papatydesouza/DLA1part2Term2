@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Consecutive Even Numbers - Ex 2 DLA</title>
+</head>
+<body>
+
+<h1>Consecutive Even Numbers - Ex 2 DLA</h1>
+<label for="startNumber">Enter a number:</label>
+<input type="number" id="startNumber" min="1">
+<button onclick="printEvenNumbers()">Print Even Numbers</button>
+
+<p id="output"></p>
+
+<script>
+  function printEvenNumbers() {
+    const startNumberInput = document.getElementById('startNumber');
+    const startNumber = parseInt(startNumberInput.value);
+
+    //condiction starts here
+    const firstNumber = startNumber % 2 === 0 ? startNumber : startNumber + 1;
+
+    let output = "";
+    for (let i = 0; i < 10; i++) {
+      const evenNumber = firstNumber + i * 2;
+      output += `Number ${i + 1} is ${evenNumber}.<br>`;
+    }
+
+    document.getElementById('output').innerHTML = output;
+  }
+</script>
+
+</body>
+</html>
